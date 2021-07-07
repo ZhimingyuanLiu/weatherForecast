@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.example.android.sunshine"
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -16,8 +16,11 @@ android {
             minifyEnabled false
         }
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'OPEN_WEATHER_MAP_API_KEY', '"e83a5d041b0266f26be952739cb5cb35"'
 
-    // COMPLETED (1) Enable databinding
+    }
+
     dataBinding.enabled = true
 }
 
